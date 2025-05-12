@@ -1,23 +1,88 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ABC POS Tech</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      max-width: 800px;
-      margin: auto;
+      font-family: 'Poppins', Arial, sans-serif; /* 改用 Poppins 字體 */
+      max-width: 900px; /* 稍微加寬 */
+      margin: 0 auto; /* 改為 0 auto 以便背景色延伸 */
+      padding: 0; /* 移除 body 的 padding，改由內部容器控制 */
+      line-height: 1.8; /* 增加行高 */
+      color: #333; /* 設定預設文字顏色 */
+      background-color: #f4f7f6; /* 加入淺灰色背景 */
+    }
+    .container { /* 新增容器來控制內容邊距 */
       padding: 2rem;
-      line-height: 1.6;
     }
     header {
+      background-color: #d70f64; /* 頁首背景色 */
+      color: white; /* 頁首文字顏色 */
+      padding: 3rem 2rem; /* 增加頁首內邊距 */
       text-align: center;
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem; /* 增加與下方內容的距離 */
+      border-bottom-left-radius: 15px; /* 圓角效果 */
+      border-bottom-right-radius: 15px;
     }
-    h1 {
+    header h1 {
+      color: white; /* 確保 h1 顏色在深色背景上可見 */
+      margin-bottom: 0.5rem;
+      font-size: 2.8em; /* 調整標題大小 */
+      font-weight: 700; /* 加粗 */
+    }
+    header p {
+      font-size: 1.1em;
+      font-weight: 300;
+    }
+    h2 {
+      color: #2c3e50; /* 更改 h2 顏色 */
+      border-bottom: 2px solid #d70f64; /* 加上底線裝飾 */
+      padding-bottom: 0.5rem;
+      margin-top: 2.5rem; /* 增加與上方內容的距離 */
+      margin-bottom: 1.5rem;
+      font-weight: 600; /* 加粗 */
+    }
+    section {
+      background-color: white; /* 區塊背景設為白色 */
+      padding: 2rem; /* 區塊內邊距 */
+      margin-bottom: 2rem; /* 區塊間距 */
+      border-radius: 8px; /* 區塊圓角 */
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* 加上細緻陰影 */
+    }
+    ul {
+      list-style-type: none; /* 移除預設列表樣式 */
+      padding-left: 0; /* 移除預設左邊內距 */
+    }
+    ul li {
+      background-color: #e8f0fe; /* 列表項背景色 */
+      padding: 0.8rem 1.2rem; /* 列表項內邊距 */
+      margin-bottom: 0.6rem; /* 列表項間距 */
+      border-left: 4px solid #d70f64; /* 左邊加上強調線 */
+      border-radius: 4px;
+    }
+    .contact-info p { /* 針對聯絡資訊的段落 */
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.8rem;
+    }
+    .contact-info p::before { /* 為聯絡資訊加上圖示 (簡易版，可替換成 SVG 或 Font Awesome) */
+      content: "📧"; /* 預設 email 圖示 */
+      margin-right: 0.8rem;
+      font-size: 1.2em;
       color: #d70f64;
+    }
+    .contact-info p:last-child::before {
+      content: "📞"; /* 電話圖示 */
+    }
+
+    footer { /* 新增頁尾樣式 */
+      text-align: center;
+      padding: 2rem;
+      margin-top: 2rem;
+      color: #777;
+      font-size: 0.9em;
+      border-top: 1px solid #e0e0e0;
     }
   </style>
 </head>
@@ -27,27 +92,33 @@
     <p>Smart POS Solutions for Restaurants and Retail</p>
   </header>
 
-  <section>
-    <h2>About Us</h2>
-    <p>
-      ABC POS Tech is a Taiwan-based technology provider focused on delivering smart, reliable Point-of-Sale solutions for F&B and retail businesses. We help merchants integrate modern ordering systems, streamline operations, and connect to platforms like foodpanda for seamless delivery experiences.
-    </p>
-  </section>
+  <div class="container"> <!-- 用 container 包裹主要內容 -->
+    <section id="about-us"> <!-- 加上 id 方便跳轉 -->
+      <h2>About Us</h2>
+      <p>
+        ABC POS Tech is a Taiwan-based technology provider focused on delivering smart, reliable Point-of-Sale solutions for F&B and retail businesses. We help merchants integrate modern ordering systems, streamline operations, and connect to platforms like foodpanda for seamless delivery experiences.
+      </p>
+    </section>
 
-  <section>
-    <h2>Our Services</h2>
-    <ul>
-      <li>Custom POS System Development</li>
-      <li>Integration with foodpanda, Uber Eats, etc.</li>
-      <li>Restaurant Order Automation</li>
-      <li>Cloud Dashboard and Reporting Tools</li>
-    </ul>
-  </section>
+    <section id="services">
+      <h2>Our Services</h2>
+      <ul>
+        <li>Custom POS System Development</li>
+        <li>Integration with foodpanda, Uber Eats, etc.</li>
+        <li>Restaurant Order Automation</li>
+        <li>Cloud Dashboard and Reporting Tools</li>
+      </ul>
+    </section>
 
-  <section>
-    <h2>Contact</h2>
-    <p>Email: wuchunwei0518@gmail.com</p>
-    <p>Phone: +886 926 675 158</p>
-  </section>
+    <section id="contact" class="contact-info"> <!-- 加上 class 方便套用樣式 -->
+      <h2>Contact</h2>
+      <p>Email: wuchunwei0518@gmail.com</p>
+      <p>Phone: +886 926 675 158</p>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 ABC POS Tech. All Rights Reserved.</p>
+  </footer>
 </body>
-</html>
+</html> 
